@@ -24,6 +24,7 @@ async function initCanisterIds() {
     for (const canister in localCanisters) {
         process.env[`NEXT_PUBLIC_${canister.toUpperCase()}_CANISTER_ID`] = localCanisters[canister][network];
     }
+    process.env.NEXT_PUBLIC_II_URL = `http://${process.env.CANISTER_ID_INTERNET_IDENTITY}.localhost:4943/`;
 }
 
 await initCanisterIds();
