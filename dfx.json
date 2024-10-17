@@ -1,0 +1,28 @@
+{
+    "canisters": {
+        "internet_computer_next_backend": {
+            "main": "apps/backend/main.mo",
+            "type": "motoko",
+            "declarations": {
+                "node_compatibility": true,
+                "output": "apps/frontend/declarations"
+            }
+        },
+        "internet_computer_next_frontend": {
+            "dependencies": ["internet_computer_next_backend"],
+            "frontend": {
+                "entrypoint": "apps/frontend/out/index.html"
+            },
+            "source": ["apps/frontend/out"],
+            "type": "assets"
+        }
+    },
+    "defaults": {
+        "build": {
+            "args": "",
+            "packtool": ""
+        }
+    },
+    "output_env_file": ".env",
+    "version": 1
+}
